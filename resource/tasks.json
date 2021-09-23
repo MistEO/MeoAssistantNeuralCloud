@@ -1,0 +1,8 @@
+{
+    "FightBegin": {
+        "algorithm": "justreturn",
+        "action": "Stop",
+        "next": [
+        ]
+    }
+}
