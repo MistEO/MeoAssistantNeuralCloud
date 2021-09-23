@@ -72,15 +72,16 @@ Rect asst::WinMacro::shaped_correct(const Rect& rect) const
 	if (rect.width == 0 || rect.height == 0) {
 		return rect;
 	}
-	// 明日方舟在异形屏上，有的地方是按比例缩放的，有的地方又是直接位移。没法整，这里简单粗暴一点截一个长条
 	Rect dst = rect;
 	if (m_scale_size.first != Configer::WindowWidthDefault) {	// 说明是宽屏
-		dst.x = 0;
-		dst.width = m_scale_size.first - 1;
+		static const double width_scale = static_cast<double>(m_scale_size.first) / Configer::WindowWidthDefault;
+		dst.x *= width_scale;
+		dst.width *= width_scale;
 	}
 	else if (m_scale_size.second != Configer::WindowHeightDefault) { // 说明是偏方形屏
-		dst.y = 0;
-		dst.height = m_scale_size.second - 1;
+		static const double height_scale = static_cast<double>(m_scale_size.second) / Configer::WindowHeightDefault;
+		dst.y *= height_scale;
+		dst.height *= height_scale;
 	}
 	return dst;
 }
