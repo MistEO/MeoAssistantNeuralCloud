@@ -5,8 +5,6 @@
         "next": [
             "ReadyToFight",
             "EnterLevelPage",
-            "ChooseFunction",
-            "ChooseFunction2",
             "ChooseLevel"
         ]
     },
@@ -59,7 +57,7 @@
         "identifyArea": [
             440,
             0,
-            356,
+            400,
             719
         ],
         "rectMove": [
@@ -76,12 +74,13 @@
     "RecoveryZone": {
         "algorithm": "OcrDetect",
         "text": [
-            "恢复区"
+            "恢复",
+            "复区"
         ],
         "identifyArea": [
             440,
             0,
-            356,
+            400,
             719
         ],
         "rectMove": [
@@ -131,7 +130,7 @@
         "identifyArea": [
             440,
             0,
-            356,
+            400,
             719
         ],
         "action": "clickSelf",
@@ -152,7 +151,8 @@
     "FinalLevel": {
         "algorithm": "OcrDetect",
         "text": [
-            "输出终端"
+            "输出终端",
+            "新中丝端"
         ],
         "rectMove": [
             -40,
@@ -163,7 +163,7 @@
         "identifyArea": [
             440,
             0,
-            356,
+            400,
             719
         ],
         "action": "clickSelf",
@@ -190,7 +190,8 @@
         "action": "clickSelf",
         "next": [
             "ChooseFunction",
-            "ChooseFunction2"
+            "ChooseFunction2",
+            "ReceiveAward"
         ]
     },
     "ChooseFunction": {
@@ -214,7 +215,7 @@
     "ReceiveAward": {
         "algorithm": "OcrDetect",
         "text": [
-            "领取奖励"
+            "领取"
         ],
         "action": "clickSelf",
         "next": [
