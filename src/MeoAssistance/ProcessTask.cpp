@@ -131,6 +131,13 @@ std::shared_ptr<TaskInfo> ProcessTask::match_image(Rect* matched_rect)
 		return nullptr;
 	}
 
+#ifdef LOG_TRACE
+	const std::string time_str = StringReplaceAll(StringReplaceAll(GetFormatTimeString(), " ", "_"), ":", "-");
+	const std::string filename = GetCurrentDir() + "\\image\\" + time_str + ".png";
+
+	bool ret = cv::imwrite(filename, cur_image);
+#endif
+
 	// 逐个匹配当前可能的任务
 	for (const std::string& task_name : m_cur_tasks_name) {
 		std::shared_ptr<TaskInfo> task_info_ptr = TaskConfiger::get_instance().m_all_tasks_info[task_name];
@@ -228,6 +235,11 @@ std::shared_ptr<TaskInfo> ProcessTask::match_image(Rect* matched_rect)
 			// TODO：抛个报错的回调出去
 			break;
 		}
+
+		rect.x += task_info_ptr->rect_move.x;
+		rect.y += task_info_ptr->rect_move.y;
+		rect.width += task_info_ptr->rect_move.width;
+		rect.height += task_info_ptr->rect_move.height;
 
 		callback_json["rect"] = make_rect<json::array>(rect);
 		callback_json["name"] = task_name;

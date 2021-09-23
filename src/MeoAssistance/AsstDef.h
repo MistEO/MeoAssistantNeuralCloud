@@ -136,6 +136,7 @@ namespace asst {
 		int rear_delay = 0;								// 执行该任务后的延时
 		int retry_times = INT_MAX;						// 未找到图像时的重试次数
 		Rect identify_area;								// 要识别的区域，若为0则全图识别
+		Rect rect_move;									// 识别到的区域，进行一定的修改，才作为最终结果
 	};
 
 	// 文字识别任务的信息

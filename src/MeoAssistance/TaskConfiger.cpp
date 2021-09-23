@@ -168,6 +168,14 @@ bool asst::TaskConfiger::parse(const json::value& json)
 				area_arr[2].as_integer(),
 				area_arr[3].as_integer());
 		}
+		if (task_json.exist("rectMove")) {
+			const json::array& area_arr = task_json.at("rectMove").as_array();
+			task_info_ptr->rect_move = Rect(
+				area_arr[0].as_integer(),
+				area_arr[1].as_integer(),
+				area_arr[2].as_integer(),
+				area_arr[3].as_integer());
+		}
 
 		const json::array& next_arr = task_json.at("next").as_array();
 		for (const json::value& next : next_arr) {
