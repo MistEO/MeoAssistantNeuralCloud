@@ -8,11 +8,19 @@ A game assistance for NeuralCloud
 
 ## 下载地址
 
-暂无
+<https://github.com/MistEO/MeoAssistance-NeuralCloud/releases/latest>
 
 ## 功能介绍
 
-暂无
+- 自动刷图
+- 其他优势
+    - 所有点击操作，都是点击按钮内随机位置，并模拟泊松分布（按钮偏中间位置点的概率大，越往旁边点到的概率越小）
+    - 刷理智及基建的点击操作，支持设置随机延时，没有封号风险~
+    - 模拟器窗口可以被遮挡、可以最小化、甚至可以老板键隐藏！即使全屏看视频、玩游戏，也完全不影响辅助运行
+- 支持多款主流模拟器
+- 勉强兼容安卓手机（USB调试、无线调试）
+- 自适应分辨率及屏幕缩放
+- 未来更多功能见[Todo](#Todo)
 
 ### 模拟器支持
 
@@ -42,7 +50,7 @@ A game assistance for NeuralCloud
 
 1. 在支持的模拟器设置中，打开`ADB`选项，蓝叠中该选项名称为`允许ADB连接`，MUMU模拟器默认就是打开的
 2. 解压压缩包，到**没有中文或特殊符号**的文件夹路径
-3. 第一次运行辅助，**请使用管理员权限**打开`MeoAsstGui.exe`。运行过一次后，后续不再需要管理员权限（之后的版本会尝试完全去掉管理员权限）
+3. 第一次运行辅助，**请使用管理员权限**打开`TestCaller.exe`。运行过一次后，后续不再需要管理员权限（之后的版本会尝试完全去掉管理员权限）
 4. 运行期间，模拟器窗口可以最小化，全屏玩游戏、看视频等，完全不影响
 
 ### 不使用模拟器，而是USB连接安卓手机
@@ -64,6 +72,10 @@ A game assistance for NeuralCloud
 
 ## Todo
 
+- [ ] 去掉管理员权限
+- [ ] 图形化界面
+- [ ] 自动刷图性能优化
+
 ## 致谢
 
 ### 开源库
@@ -71,11 +83,10 @@ A game assistance for NeuralCloud
 - 图像识别库：[opencv](https://github.com/opencv/opencv.git)
 - 文字识别库：[chineseocr_lite](https://github.com/DayBreak-u/chineseocr_lite.git)
 - C++ JSON库：[meojson](https://github.com/MistEO/meojson.git)
-- WPF MVVW框架：[Stylet](https://github.com/canton7/Stylet)
-- WPF控件库：[HandyControl](https://github.com/HandyOrg/HandyControl)
-- C# JSON库: [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
 
 ### 贡献/参与者
+
+暂无
 
 ## 广告
 
