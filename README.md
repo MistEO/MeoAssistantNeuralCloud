@@ -12,6 +12,8 @@ A game assistance for NeuralCloud
 
 ## 功能介绍
 
+初版效果演示：<https://www.bilibili.com/video/BV1rR4y1p7XG>
+
 - 自动刷图
 - 其他优势
     - 所有点击操作，都是点击按钮内随机位置，并模拟泊松分布（按钮偏中间位置点的概率大，越往旁边点到的概率越小）
