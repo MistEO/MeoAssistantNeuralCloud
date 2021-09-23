@@ -26,21 +26,43 @@ A game assistance for NeuralCloud
 
 ### 模拟器支持
 
+### 模拟器支持
+
 #### 蓝叠模拟器
 
-完美支持
+完美支持。需要在模拟器`设置`-`引擎设置`-打开`允许ADB连接`
+
+#### 蓝叠模拟器国际版
+
+完美支持。需要在模拟器`设定`-`进阶`-打开`Android调试桥`
 
 #### MuMu模拟器
 
 完美支持
 
+#### 夜神模拟器
+
+完美支持
+
+#### 雷电模拟器
+
+支持。但是雷电自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`MeoAsstGui.exe`的同级目录
+
+#### 逍遥模拟器
+
+支持。但是逍遥自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`MeoAsstGui.exe`的同级目录
+
+#### 腾讯手游助手
+
+不支持，新版本的腾讯好像也是自研引擎了，没开放ADB端口。但是测试是能响应Win32 Api的，有需求再做
+
 #### MuMu手游助手（星云引擎）  
 
-不支持，MuMu不响应SendMessage鼠标消息，而且这个版本不支持adb控制，正在想办法……
+不支持，星云引擎这个版本不响应Win32的SendMessage鼠标消息，而且不支持adb控制，无解_(:з」∠)_
 
 #### 其他模拟器
 
-其他模拟器已停止支持，若有需要，欢迎给我提[ISSUE](https://github.com/MistEO/MeoAssistance/issues)，会根据情况尽量适配~
+若有其他需要，欢迎给我提[ISSUE](https://github.com/MistEO/MeoAssistance-NeuralCloud/issues)，会根据情况尽量适配~
 
 #### 安卓手机/平板
 
