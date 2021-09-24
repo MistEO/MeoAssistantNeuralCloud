@@ -46,11 +46,11 @@ A game assistance for NeuralCloud
 
 #### 雷电模拟器
 
-支持。但是雷电自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`MeoAsstGui.exe`的同级目录
+支持。但是雷电自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`TestCaller.exe`的同级目录
 
 #### 逍遥模拟器
 
-支持。但是逍遥自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`MeoAsstGui.exe`的同级目录
+支持。但是逍遥自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`TestCaller.exe`的同级目录
 
 #### 腾讯手游助手
 
@@ -86,14 +86,14 @@ A game assistance for NeuralCloud
 
 ### 不使用模拟器，而是USB连接安卓手机
 
-1. 下载[ADB程序](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`MeoAsstGui.exe`的同级目录
+1. 下载[ADB程序](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`TestCaller.exe`的同级目录
 2. 使用USB有线连接安卓手机和电脑
 3. 请在手机`设置`-`开发者选项`中打开`USB调试`、`USB调试（安全设置）`两个选项。具体操作方式不同品牌手机各不相同，请自行百度查询
 4. 请手动修改`resource\config.json`文件中，`options`.`connectType`为`1`。文件保存后请重新打开程序
 
 ### 不使用模拟器，而是无线连接安卓手机
 
-1. 下载[ADB程序](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`MeoAsstGui.exe`的同级目录
+1. 下载[ADB程序](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`TestCaller.exe`的同级目录
 2. 请保证安卓手机和电脑处于同一局域网中
 3. 请在手机`设置`-`开发者选项`中打开`USB调试`、`USB调试（安全设置）`、`无线调试`三个选项。具体操作方式不同品牌手机各不相同，请自行百度查询
 4. 请手动修改`resource\config.json`文件中，`options`.`connectType`为`2`
