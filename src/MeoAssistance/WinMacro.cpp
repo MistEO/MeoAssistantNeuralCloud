@@ -296,6 +296,39 @@ std::vector<unsigned char> WinMacro::call_command(const std::string& cmd)
 	return pipe_data;
 }
 
+void asst::WinMacro::convert_lf(std::vector<unsigned char>& data)
+{
+	DebugTraceFunction;
+
+	if (data.empty() || data.size() <= 1) {
+		return;
+	}
+	using Iter = std::vector<unsigned char>::iterator;
+	auto pred = [](const Iter& cur) -> bool {
+		return *cur == '\r' && *(cur + 1) == '\n';
+	};
+	// find the first of "\r\n"
+	Iter first_iter;
+	for (Iter iter = data.begin(); iter != data.end() - 1; ++iter) {
+		if (pred(iter)) {
+			first_iter = iter;
+			break;
+		}
+	}
+	// move forward all non-crlf elements
+	Iter end_r1_iter = data.end() - 1;
+	Iter next_iter = first_iter;
+	while (++first_iter != end_r1_iter) {
+		if (!pred(first_iter)) {
+			*next_iter = std::move(*first_iter);
+			++next_iter;
+		}
+	}
+	*next_iter = std::move(*end_r1_iter);
+	++next_iter;
+	data.erase(next_iter, data.end());
+}
+
 Point asst::WinMacro::rand_point_in_rect(const Rect& rect)
 {
 	int x = 0, y = 0;
@@ -334,12 +367,34 @@ void asst::WinMacro::wait(unsigned id) const noexcept
 	}
 }
 
-void asst::WinMacro::screencap()
+bool asst::WinMacro::screencap()
 {
 	DebugTraceFunction;
 
 	auto data = call_command(m_emulator_info.adb.screencap);
-	m_cache_image = cv::imdecode(data, cv::IMREAD_COLOR);
+	if (!data.empty()) {
+		if (m_image_convert_lf) {
+			convert_lf(data);
+		}
+		m_cache_image = cv::imdecode(data, cv::IMREAD_COLOR);
+		if (m_cache_image.empty()) {
+			DebugTraceInfo("Data is not empty, but image is empty, try to convert lf");
+			convert_lf(data);
+			m_cache_image = cv::imdecode(data, cv::IMREAD_COLOR);
+			if (m_cache_image.empty()) {
+				m_image_convert_lf = false;
+				DebugTraceError("convert lf and retry decode falied!");
+				return false;
+			}
+			m_image_convert_lf = true;
+			return true;
+		}
+		return true;
+	}
+	else {
+		DebugTraceError("Data is empty!");
+		return false;
+	}
 
 	//cv::Mat temp_image = cv::imdecode(data, cv::IMREAD_COLOR);
 	////std::unique_lock<std::shared_mutex> image_lock(m_image_mutex);
@@ -419,7 +474,9 @@ int asst::WinMacro::swipe_without_scale(const Rect& r1, const Rect& r2, int dura
 
 cv::Mat asst::WinMacro::get_image(bool raw)
 {
-	screencap();
+	if (!screencap()) {
+		return cv::Mat();
+	}
 	//std::shared_lock<std::shared_mutex> image_lock(m_image_mutex);
 	if (raw) {
 		return m_cache_image;

@@ -36,21 +36,21 @@ A game assistance for NeuralCloud
 
 完美支持。需要在模拟器`设定`-`进阶`-打开`Android调试桥`
 
-#### MuMu模拟器
-
-完美支持
-
 #### 夜神模拟器
 
 完美支持
 
+#### MuMu模拟器
+
+支持
+
 #### 雷电模拟器
 
-支持。但是雷电自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`TestCaller.exe`的同级目录
+支持
 
 #### 逍遥模拟器
 
-支持。但是逍遥自带的`ADB`版本太老了，有一些命令有问题，所以需要下载[谷歌官方ADB](https://dl.google.com/android/repository/platform-tools-latest-windows.zip)，将`platform-tools`文件夹解压到`TestCaller.exe`的同级目录
+支持
 
 #### 腾讯手游助手
 
@@ -74,8 +74,9 @@ A game assistance for NeuralCloud
 
 1. 在支持的模拟器设置中，打开`ADB`选项，蓝叠中该选项名称为`允许ADB连接`，MUMU模拟器默认就是打开的
 2. 解压压缩包，到**没有中文或特殊符号**的文件夹路径
-3. 第一次运行辅助，**请使用管理员权限**打开`TestCaller.exe`。运行过一次后，后续不再需要管理员权限（之后的版本会尝试完全去掉管理员权限）
-4. 运行期间，模拟器窗口可以最小化，全屏玩游戏、看视频等，完全不影响
+3. 游戏打开关卡选择界面，有橙色`准备作战`按钮的界面；或游戏打开编辑队伍，有橙色`作战开始`的界面
+4. 第一次运行辅助，**请使用管理员权限**打开`TestCaller.exe`。运行过一次后，后续不再需要管理员权限（之后的版本会尝试完全去掉管理员权限）
+5. 运行期间，模拟器窗口可以最小化，全屏玩游戏、看视频等，完全不影响
 
 ### 设置操作延时
 
