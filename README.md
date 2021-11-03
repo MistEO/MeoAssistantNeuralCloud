@@ -6,6 +6,12 @@ A game assistance for NeuralCloud
 
 目前还没想好要做哪些功能，主要是作者才刚玩这游戏（x，移植自[Meo明日方舟辅助](https://github.com/MistEO/MeoAssistance-Arknights)
 
+## 项目状态
+
+咕咕咕_(:з」∠)_  
+
+有兴趣的大佬可以fork过去自行修改，基本全是面向json的热流程，需要的话我可以整个文档出来。
+
 ## 下载地址
 
 <https://github.com/MistEO/MeoAssistance-NeuralCloud/releases/latest>
@@ -14,7 +20,7 @@ A game assistance for NeuralCloud
 
 初版效果演示：<https://www.bilibili.com/video/BV1rR4y1p7XG>
 
-- 自动刷图
+- 目前的版本是专门用来刷技能枢核的，从困难4界面开始，刷4-3
 - 其他优势
     - 所有点击操作，都是点击按钮内随机位置，并模拟泊松分布（按钮偏中间位置点的概率大，越往旁边点到的概率越小）
     - 点击操作支持手动设置随机延时，没有封号风险~
@@ -74,9 +80,14 @@ A game assistance for NeuralCloud
 
 1. 在支持的模拟器设置中，打开`ADB`选项，蓝叠中该选项名称为`允许ADB连接`，MUMU模拟器默认就是打开的
 2. 解压压缩包，到**没有中文或特殊符号**的文件夹路径
-3. 游戏打开关卡选择界面，有橙色`准备作战`按钮的界面；或游戏打开编辑队伍，有橙色`作战开始`的界面
-4. 第一次运行辅助，**请使用管理员权限**打开`TestCaller.exe`。运行过一次后，后续不再需要管理员权限（之后的版本会尝试完全去掉管理员权限）
-5. 运行期间，模拟器窗口可以最小化，全屏玩游戏、看视频等，完全不影响
+3. 目前的版本是专门用来刷技能枢核的，从暗域4-3界面开始，想刷其他的改一句tasks就行
+![4)`$M4VKINZA B}D_P2MLUP](https://user-images.githubusercontent.com/18511905/140064282-d0b4cd0d-f05a-4e4b-b071-24657ebcef36.png)
+
+5. 第一次运行辅助，**请使用管理员权限**打开`TestCaller.exe`。运行过一次后，后续不再需要管理员权限（之后的版本会尝试完全去掉管理员权限）
+6. 运行期间，模拟器窗口可以最小化，全屏玩游戏、看视频等，完全不影响
+7. 第一次运行不出枢核的话，点击退出需要打勾勾，有需要的大佬可以自行完善一下task，或者干脆不搞，点一次也不费事
+![J 7WR 4PCDE0 UX}U}8U{}B](https://user-images.githubusercontent.com/18511905/140064395-e21cb779-c186-4299-9a66-7b1ae3ebff6e.png)
+
 
 ### 设置操作延时
 
@@ -118,7 +129,7 @@ A game assistance for NeuralCloud
 
 ### 贡献/参与者
 
-暂无
+- 感谢tiernath大佬帮忙重新整理刷图流程~
 
 ## 广告
 
