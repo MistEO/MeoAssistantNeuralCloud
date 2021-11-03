@@ -3,19 +3,42 @@
         "algorithm": "justreturn",
         "action": "doNothing",
         "next": [
+            "FindLevel"
+        ]
+    },
+    "FindLevel": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "ENIGMA","恩格玛","思格玛"
+        ],
+        "action": "swipetotheright",
+        "next": [
+            "SelectLevel"
+        ],
+        "rearDelay":5000
+    },
+    "SelectLevel": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "集中开火","STAGE4-3"
+        ],
+        "action": "clickSelf",
+        "next": [
             "ReadyToFight",
-            "EnterLevelPage",
-            "ChooseLevel"
+            "EnterLevelPage"
         ]
     },
     "ReadyToFight": {
         "algorithm": "OcrDetect",
         "text": [
-            "准备作战"
+            "准备作战","准音作战"
         ],
         "action": "clickSelf",
         "next": [
             "EnterLevelPage"
+        ],
+        "exceededNext":[
+            "SelectLevel"
         ]
     },
     "EnterLevelPage": {
@@ -25,191 +48,92 @@
         ],
         "action": "clickSelf",
         "next": [
-            "ChooseLevel"
+            "EnterStatePage"
         ]
     },
-    "ChooseLevel": {
-        "algorithm": "OcrDetect",
-        "action": "doNothing",
-        "text": [
-            "当前层数",
-            "冲突区",
-            "恢复区",
-            "异常区",
-            "输出终端"
-        ],
-        "next": [
-            "ConflictZone",
-            "RecoveryZone",
-            "AbnormalZone",
-            "FinalLevel"
-        ]
-    },
-    "ConflictZone": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "高级",
-            "中级",
-            "初级",
-            "冲突区",
-            "冲实区"
-        ],
-        "identifyArea": [
-            440,
-            0,
-            400,
-            719
-        ],
-        "rectMove": [
-            -40,
-            20,
-            130,
-            60
-        ],
-        "action": "clickSelf",
-        "next": [
-            "StartToFight2"
-        ]
-    },
-    "RecoveryZone": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "恢复",
-            "复区"
-        ],
-        "identifyArea": [
-            440,
-            0,
-            400,
-            719
-        ],
-        "rectMove": [
-            -40,
-            20,
-            130,
-            60
-        ],
-        "action": "clickSelf",
-        "next": [
-            "SelectRecovery"
-        ]
-    },
-    "SelectRecovery": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "修复全员",
-            "修复当前生命值"
-        ],
-        "action": "clickSelf",
-        "next": [
-            "LeaveRecoveryZone",
-            "ChooseLevel"
-        ]
-    },
-    "LeaveRecoveryZone": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "离开"
-        ],
-        "action": "clickSelf",
-        "next": [
-            "ChooseLevel"
-        ]
-    },
-    "AbnormalZone": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "异常区"
-        ],
-        "rectMove": [
-            -40,
-            20,
-            130,
-            60
-        ],
-        "identifyArea": [
-            440,
-            0,
-            400,
-            719
-        ],
-        "action": "clickSelf",
-        "next": []
-    },
-    "SelectAbnormal": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "获得",
-            "双倍酬金"
-        ],
-        "action": "clickSelf",
-        "next": [
-            "LeaveRecoveryZone",
-            "ChooseLevel"
-        ]
-    },
-    "FinalLevel": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "输出终端",
-            "新中丝端"
-        ],
-        "rectMove": [
-            -40,
-            20,
-            130,
-            60
-        ],
-        "identifyArea": [
-            440,
-            0,
-            400,
-            719
-        ],
-        "action": "clickSelf",
-        "next": [
-            "StartToFight2"
-        ]
-    },
-    "StartToFight2": {
-        "algorithm": "OcrDetect",
-        "text": [
-            "开始战斗"
-        ],
-        "rearDelay": 10000,
-        "action": "clickSelf",
-        "next": [
-            "EndOfFight"
-        ]
-    },
-    "EndOfFight": {
+    "EnterStatePage": {
         "algorithm": "OcrDetect",
         "text": [
             "点击屏幕继续"
         ],
         "action": "clickSelf",
         "next": [
-            "ChooseFunction",
-            "ChooseFunction2",
+            "ChoosePlanMode"
+        ]
+    },
+    "ChoosePlanMode": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "OFF"
+        ],
+        "action": "clickSelf",
+        "next": [
+            "DoPlan"
+        ]
+    },
+    "DoPlan": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "执行计划"
+        ],
+        "action": "clickSelf",
+        "next": [
+            "Sleeppingst"
+        ]
+    },
+    "Sleeppingst": {
+        "algorithm": "OcrDetect",
+        "action": "doNothing",
+        "text": [
+            "接管中"
+        ],
+        "next": [
+            "CancelAward",
+            "Sleeppingse"
+        ],
+        "rearDelay":20000
+    },
+    "Sleeppingse": {
+        "algorithm": "OcrDetect",
+        "action": "doNothing",
+        "text": [
+            "接管中","当前层数","暂停","战术技能","下一步","中止计划","ON","菜单"
+        ],
+        "next": [
+            "CancelAward",
+            "Sleeppingst"
+        ],
+        "rearDelay":20000
+    },
+    "CancelAward": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "取消选中"
+        ],
+        "action": "clickSelf",
+        "next": [
+            "ChooseAward",
+            "Quite"
+        ]
+    },
+    "ChooseAward": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "技能枢核","枢核"
+        ],
+        "action": "clickSelf",
+        "next": [
             "ReceiveAward"
         ]
     },
-    "ChooseFunction": {
-        "algorithm": "matchtemplate",
-        "template": "ChooseFunction.png",
-        "cache": false,
+    "Quite": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "离开"
+        ],
         "action": "clickSelf",
         "next": [
-            "ChooseLevel"
-        ]
-    },
-    "ChooseFunction2": {
-        "algorithm": "matchtemplate",
-        "template": "ChooseFunction2.png",
-        "cache": false,
-        "action": "clickSelf",
-        "next": [
-            "ChooseLevel"
+            "Return"
         ]
     },
     "ReceiveAward": {
@@ -229,12 +153,25 @@
         ],
         "action": "clickSelf",
         "next": [
-            "Stop"
+            "GetOther"
         ]
     },
-    "Stop": {
+    "GetOther": {
+        "algorithm": "OcrDetect",
+        "text": [
+            "点击屏幕继续"
+        ],
+        "action": "clickSelf",
+        "next": [
+            "Restart"
+        ]
+    },
+    "Restart": {
         "algorithm": "justreturn",
-        "action": "stop",
-        "next": []
+        "action": "doNothing",
+        "next": [
+            "FightBegin"
+        ],
+        "rearDelay":10000
     }
 }

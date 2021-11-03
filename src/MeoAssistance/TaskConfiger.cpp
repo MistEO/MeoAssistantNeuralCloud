@@ -142,7 +142,7 @@ bool asst::TaskConfiger::parse(const json::value& json)
         }
 
         task_info_ptr->max_times = task_json.get("maxTimes", INT_MAX);
-        if (task_json.exist("exceededNext")) {
+        if (task_json.exist("exceededNext")) {  // 222
             const json::array& excceed_next_arr = task_json.at("exceededNext").as_array();
             for (const json::value& excceed_next : excceed_next_arr) {
                 task_info_ptr->exceeded_next.emplace_back(excceed_next.as_string());
@@ -152,7 +152,7 @@ bool asst::TaskConfiger::parse(const json::value& json)
             task_info_ptr->exceeded_next.emplace_back("Stop");
         }
         task_info_ptr->pre_delay = task_json.get("preDelay", 0);
-        task_info_ptr->rear_delay = task_json.get("rearDelay", 0);
+        task_info_ptr->rear_delay = task_json.get("rearDelay", 0);  // 11111
         if (task_json.exist("reduceOtherTimes")) {
             const json::array& reduce_arr = task_json.at("reduceOtherTimes").as_array();
             for (const json::value& reduce : reduce_arr) {

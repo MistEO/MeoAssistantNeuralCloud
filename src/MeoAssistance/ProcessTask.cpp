@@ -373,18 +373,20 @@ void asst::ProcessTask::exec_swipe_task(ProcessTaskAction action)
     if (!delay_random()) {
         return;
     }
-    const static Rect right_rect(Configer::WindowWidthDefault * 0.8,
-        Configer::WindowHeightDefault * 0.4,
+    //功能临时修改为up_rect
+    const static Rect right_rect(Configer::WindowWidthDefault * 0.1,
+        Configer::WindowHeightDefault * 0.3,
         Configer::WindowWidthDefault * 0.1,
-        Configer::WindowHeightDefault * 0.2);
-
+        Configer::WindowHeightDefault * 0.7);
+    //功能临时修改为down_rect
     const static Rect left_rect(Configer::WindowWidthDefault * 0.1,
-        Configer::WindowHeightDefault * 0.4,
+        Configer::WindowHeightDefault * 0.7,
         Configer::WindowWidthDefault * 0.1,
-        Configer::WindowHeightDefault * 0.2);
+        Configer::WindowHeightDefault * 0.7);
 
     switch (action)
     {
+    //功能临时修改为SwipeToTheUp
     case asst::ProcessTaskAction::SwipeToTheLeft:
         m_controller_ptr->swipe(left_rect, right_rect);
         break;
